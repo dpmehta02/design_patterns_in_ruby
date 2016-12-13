@@ -8,11 +8,11 @@ class Animal
   end
 
   def say_species
-    raise "Implement say_species"
+    raise NotImplementedError, "Implement say_species"
   end
 
   def make_sound
-    raise "Implement make_sound"
+    raise NotImplementedError, "Implement make_sound"
   end
 end
 
