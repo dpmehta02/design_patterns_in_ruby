@@ -1,5 +1,5 @@
 # Below is an example of the Strategy design pattern.
-# Examples: TODO
+# Examples: rdoc parsers
 
 class Animal
   attr_accessor :species
