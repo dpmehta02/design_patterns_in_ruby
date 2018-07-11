@@ -1,6 +1,9 @@
+#
 # Below is an example of the Observer design pattern, which makes it easy to
 # build components that know about the activites of other components.
+#
 # Examples: ActiveRecord callbacks, PubSub
+#
 
 module Subject
   def initialize
@@ -11,14 +14,12 @@ module Subject
     @observers << o
   end
 
-  def remove_observser(o)
+  def remove_observer(o)
     @observers.delete(o)
   end
 
   def notify_observers
-    @observers.each do |o|
-      o.update(self)
-    end
+    @observers.each { |o| o.update(self) }
   end
 end
 
@@ -27,9 +28,9 @@ class Employee
 
   attr_reader :name, :salary
 
-  def initialize(name, salary)
+  def initialize(ee_name, salary)
     super()  # Calls the module's `initialize` with no args
-    @name = name
+    @name = ee_name
     @salary = salary
   end
 
@@ -54,7 +55,7 @@ end
 
 employee_of_the_month = Employee.new("Vijay", "10,000")
 payroll_dept = Payroll.new
-husband = Spouse.new
+my_spouse = Spouse.new
 employee_of_the_month.add_observer(payroll_dept)
-employee_of_the_month.add_observer(husband)
+employee_of_the_month.add_observer(my_spouse)
 employee_of_the_month.salary = "15,000"

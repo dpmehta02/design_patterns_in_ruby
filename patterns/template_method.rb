@@ -1,5 +1,8 @@
+# 
 # Below is an example of the Template Method design pattern.
+# 
 # Examples: Trailblazer Operations (process), Sidekiq (perform)
+# 
 
 class Animal
   def describe
